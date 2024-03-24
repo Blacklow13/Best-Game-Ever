@@ -7,6 +7,8 @@ public class EnemyAI : MonoBehaviour
 {
     public List<Transform> patrolPoints;
 
+    public EnemyHealth enemyHealth;
+
     public PlayerController player;
 
     public float viewAngle;
@@ -19,9 +21,15 @@ public class EnemyAI : MonoBehaviour
 
     public float damage = 30;
 
-    private PlayerHealth playerHealth;
+    private PlayerHealth _playerHealth;
 
     // Start is called before the first frame update
+
+    public bool IsAlive()
+    {
+        return enemyHealth.IsAlive();
+    }
+
     void Start()
     {
         InitComponentLinks();
@@ -71,7 +79,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (_isPlayerNoticed  && _navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
         {
-            playerHealth.DealDamage(damage * Time.deltaTime);
+            _playerHealth.DealDamage(damage * Time.deltaTime);
         }
     }
     private void PatrolUpdate()
@@ -85,11 +93,12 @@ public class EnemyAI : MonoBehaviour
 
         _navMeshAgent = GetComponent<NavMeshAgent>();
 
-        playerHealth = player.GetComponent<PlayerHealth>();
+        _playerHealth = player.GetComponent<PlayerHealth>();
+
 
     }
     private void PickNewPatrolPoint()
     {
-        _navMeshAgent.destination = patrolPoints[Random.Range(0, patrolPoints.Count - 1)].position;
+        _navMeshAgent.destination = patrolPoints[Random.Range(0, patrolPoints.Count)].position;
     }
 }

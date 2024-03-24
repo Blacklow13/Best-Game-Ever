@@ -1002,7 +1002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ccd49ec6a3a63b4fbd4effa1fecd6a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grenadePrefab: {fileID: 4932900447424613644, guid: c3cd54fdf0094504aa33516cf6c505da,
+  grenadePrefab: {fileID: 3681564884299209524, guid: c3cd54fdf0094504aa33516cf6c505da,
     type: 3}
   grenadeSourceTransform: {fileID: 1734429373639521659}
   SpellIcon: {fileID: 5135408354962252494}
@@ -1713,7 +1713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -30, y: -5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7456993873658370026

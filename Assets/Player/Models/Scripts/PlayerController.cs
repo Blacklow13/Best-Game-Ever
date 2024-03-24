@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private float _fallVelocity = 0;
     private CharacterController _characterController;
     private Vector3 _moveVector;
-    private int jump;
+    private int jump = 0;
 
     void Start()
     {
