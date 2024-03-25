@@ -7,12 +7,12 @@ using TMPro;
 public class PlayerProgress : MonoBehaviour
 {
     public TextMeshProUGUI ScoreOfKillsUI;
+    public TextMeshProUGUI ScoreOfKillsUIEndScreen;
 
     private int scoreOfKills;
   
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -28,6 +28,9 @@ public class PlayerProgress : MonoBehaviour
     private void DrawUI()
     {
         ScoreOfKillsUI.text = scoreOfKills.ToString();
+        ScoreOfKillsUIEndScreen.text = scoreOfKills.ToString();
+    
+        
     }
 
 }

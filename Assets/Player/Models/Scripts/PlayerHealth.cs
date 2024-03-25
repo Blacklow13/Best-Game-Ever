@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -10,16 +11,22 @@ public class PlayerHealth : MonoBehaviour
     public Animator animator;
 
     public GameObject GameplayUI;
-    public GameObject GameOverScreen;
+    public GameObject GameOverScreen; 
+    
+    public TextMeshProUGUI SurvavialTimeUI;
 
+    private float _startTime;
     private float _maxValue;
+    private bool _isTimeNotActive;
 
     // Start is called before the first frame update
     void Start()
     {
+        _startTime = Time.time;
         _maxValue = value;
         DrawHealthBar();
         GameOverScreen.SetActive(false);
+        _isTimeNotActive = true;
     }
     public void DealDamage(float damage)
     {
@@ -37,6 +44,11 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<FireballCaster>().enabled = false;
         GetComponent<CameraRotation>().enabled = false;
         GetComponent<GranadeCaster>().enabled = false;
+        if (_isTimeNotActive)
+        {
+            _isTimeNotActive = false;
+            SurvavialTimeUI.text = ((int)(Time.time - _startTime) / 60).ToString() + ":" + ((int)(Time.time - _startTime) % 60).ToString();
+        }
         animator.SetTrigger("death");
     }
     private void GameOver()

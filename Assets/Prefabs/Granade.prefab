@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac0a9a055b51c54ea11d64e72392eea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 1.3
+  delay: 1
   explosionPrefab: {fileID: 6374192749861373746, guid: 93bd6ee60b04d1f4cad6c9352a112997,
     type: 3}
 --- !u!54 &3681564884299209524
