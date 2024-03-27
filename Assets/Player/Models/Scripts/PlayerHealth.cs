@@ -10,6 +10,9 @@ public class PlayerHealth : MonoBehaviour
 
     public Animator animator;
 
+    public AudioSource HealSound;
+
+    public GameObject HealEffect;
     public GameObject GameplayUI;
     public GameObject GameOverScreen; 
     
@@ -61,6 +64,8 @@ public class PlayerHealth : MonoBehaviour
     {
         value += amount;
         value = Mathf.Clamp(value, 0, _maxValue);
+        HealSound.Play();
+        HealEffect.GetComponent<ParticleSystem>().Play();
         DrawHealthBar();
     }
     private void DrawHealthBar()

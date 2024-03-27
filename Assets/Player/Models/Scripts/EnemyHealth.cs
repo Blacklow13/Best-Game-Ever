@@ -7,7 +7,7 @@ using TMPro;
 public class EnemyHealth : MonoBehaviour
 {
     public float value = 100;
-    
+
     public PlayerProgress playerProgress;
 
     private bool IsKilled = true;

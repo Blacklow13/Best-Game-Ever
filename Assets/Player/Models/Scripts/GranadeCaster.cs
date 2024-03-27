@@ -15,13 +15,12 @@ public class GranadeCaster : MonoBehaviour
     public float Cooldown;
 
     private float _timer;
-    // Start is called before the first frame update
-    void Start()
+
+    void OnEnable()
     {
         _timer = Cooldown;
     }
 
-    // Update is called once per frame
     void Update()
     {
         _timer += Time.deltaTime;

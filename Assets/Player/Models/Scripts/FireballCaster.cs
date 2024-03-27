@@ -16,7 +16,7 @@ public class FireballCaster : MonoBehaviour
     private float _timer ;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         _timer = Cooldown;
     }

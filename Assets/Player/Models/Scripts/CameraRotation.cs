@@ -9,10 +9,6 @@ public class CameraRotation : MonoBehaviour
     public float minAngle;
     public float maxAngle;
     public Transform CameraAxisTransform;
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

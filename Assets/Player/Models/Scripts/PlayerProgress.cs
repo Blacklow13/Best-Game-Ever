@@ -9,8 +9,11 @@ public class PlayerProgress : MonoBehaviour
     public TextMeshProUGUI ScoreOfKillsUI;
     public TextMeshProUGUI ScoreOfKillsUIEndScreen;
 
+    public AudioSource Sound;
+
     private int scoreOfKills;
   
+
     void Start()
     {
     }
@@ -23,6 +26,7 @@ public class PlayerProgress : MonoBehaviour
 
     public void AddKils()
     {
+        Sound.Play();
         scoreOfKills++;
     }
     private void DrawUI()
